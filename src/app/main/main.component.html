@@ -1,0 +1,51 @@
+<mat-toolbar class="header">
+  <!-- <span>Third Line</span> -->
+  <h1 id="title">bankIF</h1>
+  <span class="example-spacer"></span>
+  <!-- <mat-icon class="example-icon">favorite</mat-icon> -->
+  <img src="./assets/icons/wbd.png" />
+</mat-toolbar>
+
+<br>
+
+<div class="container-fluid">
+  <div class="clearfix text-center">
+    <div class="col-md-12">
+      <h2>Opções</h2>
+      <br>
+      <br>
+      <div class="button-row">
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('Add Client')">Add
+          <br>Client</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('Remove Client')">Remove
+          <br>Client</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('Get Client Balance')">Get Client's
+          <br>Balance</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('List Clients')">List
+          <br>Clients</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('Deposit Money')">Deposit
+          <br>Money</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('Transfer Money')">Transfer
+          <br>Money</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('Withdrawl Money')">Withdrawl
+          <br>Money</button>
+        <button mat-fab color="primary" (click)="onClick(); this.mainService.option.next('List Actions')">List
+          <br>Actions</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="clicked">
+      <hr><br>
+  </div>
+  <div class="clearfix text-center">
+      <h1>{{option}}</h1><br>
+  </div>
+  <div class="container-fluid">
+    <div class="clearfix text-center" *ngIf="clicked" id="options">
+      <!-- <div class="col-md-4"></div> -->
+      <div class="col-md-12">
+        <app-table-list></app-table-list>
+      </div>
+    </div>
+    <!-- <div class="col-md-4"></div> -->
+  </div>

@@ -1,0 +1,27 @@
+{
+  "server": {
+      "href": "/bank",
+      "protocol": "http",
+      "host": "localhost",
+      "port": "3333",
+      "routes": "./../routes",
+      "key": "./config/server.key",
+      "cert": "./config/server.crt"
+  },
+  "api": {
+      "api_url": "/api/",
+      "token_secret": "hkt48 sakura miyawaki hkt48 sakura miyawaki hkt48 sakura miyawaki",
+      "token_audience": "Configurador",
+      "sample_route": "/api/clients/addClient"
+  },
+  "integrationServer": {
+      "host": "192.168.2.27",
+      "port": "32781",
+      "auth": "Administrator:manage",
+      "timeout": 10000,
+      "example": "/rest/Bank_Training/resources/"
+  },
+  "index": {
+    "path": "./../../node_modules/nodejs-baseline/server/utils/index"
+  }
+}

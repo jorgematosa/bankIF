@@ -1,0 +1,50 @@
+.example-icon {
+  padding: 0 14px;
+  color: white;
+}
+
+#title {
+  color: rgb(97, 116, 143);
+  font-size: 140%;
+  font-weight: bold;
+}
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header {
+  background-color: rgb(201, 201, 201);
+  position: sticky;
+  top: 0;
+  opacity: 1;
+  z-index: 1000;
+}
+
+mat-toolbar img {
+  object-fit: scale-down;
+  /* width: 10%; */
+  height: 80%;
+}
+
+
+button {
+  margin-right: 8px;
+  width: 100px;
+  height: 100px;
+  word-break: break-all;
+}
+
+button:focus {
+  outline: none;
+  border: 0;
+}
+
+.button-row {
+  margin-bottom: 20px;
+}
+
+#options {
+  display:flex;
+  align-items: center;
+}

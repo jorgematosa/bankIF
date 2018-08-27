@@ -1,0 +1,36 @@
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+#list {
+  text-align: center;
+  width: 100%;
+}
+
+::ng-deep .mat-sort-header-container {
+  display:flex;
+  justify-content:center;
+}
+
+h2 {
+  margin-top: 10px;
+  color: red;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+}
+
+th.mat-sort-header-sorted {
+  color: black;
+}
+
+#content {
+  width: 30%;
+}

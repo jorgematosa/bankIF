@@ -1,0 +1,30 @@
+# Use this Dockerfile to build the baseline container for Vodafone OSS NodeJS + Angular projects
+# Run on docker server to build image (replace {number} with version number):
+# > docker build . -t node_ng_chrome:v{number}
+FROM node:9.11.1
+# npm cache settings
+RUN npm config set cache-min 9999999
+
+RUN mkdir /usr/local/node_modules_global
+# get most of the npm dependencies
+COPY package.json /usr/local/node_modules_global
+WORKDIR /usr/local/node_modules_global
+#Needed to run karma tests
+RUN npm install -g --unsafe-perm @angular/cli@6.0.1
+RUN npm install -g npm-cli-login
+# define corporate npm registry
+RUN npm set registry http://wdsrv07.corp.webdisplay.pt:4873
+# apt-get update: fundamental in order to correctly retrieve chrome dependencies
+RUN apt-get update
+# Install Chrome
+RUN wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN dpkg -i google-chrome-stable_current_amd64.deb; apt-get -fy install
+# Environmet variables
+ENV CHROME_BIN=/opt/google/chrome/google-chrome
+# remove installation files
+RUN rm google-chrome-stable_current_amd64.deb
+RUN google-chrome --version
+# copy certificates into container's image
+RUN mkdir /certs
+# COPY ./certificates/server.crt /certs/
+# COPY ./certificates/server.key /certs/

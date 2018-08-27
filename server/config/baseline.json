@@ -1,0 +1,24 @@
+/* All keys defined as undefined are mandatory */
+{
+    "server": {
+        "href": "/baseline",
+        "protocol": "http",
+        "host": "localhost",
+        "port": "3333",
+        "routes": "./../routes",
+        "key": "./config/server.key",
+        "cert": "./config/server.crt"
+    },
+    "api": {
+        "api_url": "/api/baseline/", //api_'endpoint'
+        "token_secret": "undefined", //string for JWT secret
+        "sample_route": "route" //make one for all routes, as needed
+    },
+    "integrationServer": {
+        "host": "wdlab-centos709.corp.webdisplay.pt",
+        "port": "5555",
+        "auth": "undefined", //credentials in format username:password
+        "timeout": 10000,
+        "example": "/rest/smart/data/go/_pub/" //for all services that get called
+    }
+}
